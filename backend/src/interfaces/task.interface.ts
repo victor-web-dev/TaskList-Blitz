@@ -10,7 +10,7 @@ export interface ITaskData {
 }
 
 export interface ITaskModel {
-  getAll(): Promise<ITaskData[]>;
+  getAll(): Promise<ITaskData[] | undefined>;
   createTask(): any;
   updateTask(): any;
   deleteTask(): any;
