@@ -1,8 +1,10 @@
 import express from 'express';
+import TaskController from '../controller/task.controller';
 
 const taskRoute = express.Router();
+const tc = new TaskController();
 
-taskRoute.get('/', () => {});
+taskRoute.get('/', tc.getAll.bind(tc));
 
 taskRoute.post('/', () => {});
 
