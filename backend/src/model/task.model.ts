@@ -23,7 +23,7 @@ export default class TaskModel implements ITaskModel {
       return data as ITaskData[];
     } catch (error) {
       if (error instanceof Error) {
-        this.log.generate(error.message);
+        await this.log.generate(error.message);
       }
     }
   }
