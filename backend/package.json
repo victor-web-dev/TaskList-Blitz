@@ -4,15 +4,17 @@
   "description": "",
   "main": "index.js",
   "prisma": {
-    "seed": "ts-node prisma/seed/task.seed.ts"
+    "seed": "ts-node ./src/prisma/seed/task.seed.ts",
+    "schema": "./src/prisma/schema.prisma"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon ./src/index.ts",
     "build": "tsc",
     "lint": "eslint ./src --ext .ts",
-    "prisma:migrate": "npx prisma migrate dev",
-    "prisma:seed": "npx prisma db seed"
+    "prisma:migrate": "npx prisma migrate reset",
+    "prisma:seed": "npx prisma db seed",
+    "app:first-run": "npm run build && npm run prisma:migrate"
   },
   "keywords": [],
   "author": "",
