@@ -27,4 +27,14 @@ export default class TaskController {
       return res.status(sc.INTERNAL_SERVER_ERROR).end();
     }
   }
+
+  public async updateTask(req: Request, res: Response) {
+    try {
+      const task = req.body;
+      const data = await this.service.updateTask(task);
+      return res.status(sc.OK).json(data);
+    } catch (error) {
+      return res.status(sc.INTERNAL_SERVER_ERROR).end();
+    }
+  }
 }
