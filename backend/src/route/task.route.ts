@@ -11,6 +11,6 @@ taskRoute.post('/', verifyTask, tc.createTask.bind(tc));
 
 taskRoute.patch('/', verifyUpdateTask, tc.updateTask.bind(tc));
 
-taskRoute.delete('/:id', () => {});
+taskRoute.delete('/:id', tc.deleteTask.bind(tc));
 
 export default taskRoute;
