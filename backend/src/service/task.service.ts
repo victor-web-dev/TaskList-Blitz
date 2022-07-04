@@ -23,4 +23,9 @@ export default class TaskService {
     const data = await this.model.updateTask(task);
     return data;
   }
+
+  public async deleteTask(id: number) {
+    const data = await this.model.deleteTask(id);
+    return data;
+  }
 }
