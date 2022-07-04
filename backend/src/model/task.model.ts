@@ -39,9 +39,20 @@ export default class TaskModel {
     }
   }
 
-  // async updateTask() {
-  //   throw new Error('Method not implemented.');
-  // }
+  public async updateTask(task: ITaskData): Promise<ITaskData | undefined > {
+    try {
+      const data = await this.prisma.task.update({
+        where: { id: task.id },
+        data: { title: task.title, content: task.content, status: task.status },
+      });
+      return data as ITaskData;
+    } catch (error) {
+      if (error instanceof Error) {
+        await this.log.generate(error.message);
+        throw new Error(error.message);
+      }
+    }
+  }
 
   // async deleteTask() {
   //   throw new Error('Method not implemented.');
