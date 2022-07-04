@@ -17,4 +17,14 @@ export default class TaskController {
       return res.status(sc.INTERNAL_SERVER_ERROR).end();
     }
   }
+
+  public async createTask(req: Request, res: Response) {
+    try {
+      const task = req.body;
+      const data = await this.service.createTask(task);
+      return res.status(sc.CREATED).json(data);
+    } catch (error) {
+      return res.status(sc.INTERNAL_SERVER_ERROR).end();
+    }
+  }
 }

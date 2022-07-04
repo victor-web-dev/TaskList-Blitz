@@ -1,8 +1,9 @@
+/* eslint-disable consistent-return */
 import { PrismaClient } from '@prisma/client';
-import { ITaskData, ITaskModel } from '../interfaces/task.interface';
+import { ITaskData } from '../interfaces/task.interface';
 import Log from '../logs/generate.log';
 
-export default class TaskModel implements ITaskModel {
+export default class TaskModel {
   private prisma: PrismaClient;
 
   private logPath: string;
@@ -15,7 +16,6 @@ export default class TaskModel implements ITaskModel {
     this.log = new Log(this.logPath);
   }
 
-  // eslint-disable-next-line consistent-return
   public async getAll(): Promise<ITaskData[] | undefined> {
     try {
       const data = await this.prisma.task.findMany();
@@ -28,15 +28,22 @@ export default class TaskModel implements ITaskModel {
     }
   }
 
-  async createTask() {
-    throw new Error('Method not implemented.');
+  public async createTask(taskData: ITaskData): Promise<ITaskData | undefined> {
+    try {
+      const data = await this.prisma.task.create({ data: taskData });
+      return data as ITaskData;
+    } catch (error) {
+      if (error instanceof Error) {
+        await this.log.generate(error.message);
+      }
+    }
   }
 
-  async updateTask() {
-    throw new Error('Method not implemented.');
-  }
+  // async updateTask() {
+  //   throw new Error('Method not implemented.');
+  // }
 
-  async deleteTask() {
-    throw new Error('Method not implemented.');
-  }
+  // async deleteTask() {
+  //   throw new Error('Method not implemented.');
+  // }
 }

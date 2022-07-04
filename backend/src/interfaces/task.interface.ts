@@ -9,9 +9,9 @@ export interface ITaskData {
   updatedAt?: Date;
 }
 
-export interface ITaskModel {
-  getAll(): Promise<ITaskData[] | undefined>;
-  createTask(): any;
-  updateTask(): any;
-  deleteTask(): any;
-}
+// export interface ITaskModel {
+//   getAll(): Promise<ITaskData[] | undefined>;
+//   createTask(): Promise<ITaskData | undefined>;
+//   updateTask(): any;
+//   deleteTask(): any;
+// }

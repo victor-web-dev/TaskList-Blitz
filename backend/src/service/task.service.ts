@@ -1,3 +1,4 @@
+import { ITaskData } from '../interfaces/task.interface';
 import TaskModel from '../model/task.model';
 
 export default class TaskService {
@@ -9,6 +10,12 @@ export default class TaskService {
 
   public async getAll() {
     const data = await this.model.getAll();
+    return data;
+  }
+
+  public async createTask(taskData: ITaskData) {
+    const data = await this.model.createTask(taskData);
+    if (!data) throw new Error('Not created, something went wrong');
     return data;
   }
 }
