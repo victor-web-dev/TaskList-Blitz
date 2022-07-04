@@ -2,6 +2,11 @@ import { Request, Response, NextFunction } from 'express';
 import { StatusCodes as sc } from 'http-status-codes';
 // import { TaskStatus } from '../interfaces/task.interface';
 
+const checkId = (id: number): boolean => {
+  if (id === undefined || id === null) return false;
+  return true;
+};
+
 const checkTitle = (title: string): boolean => {
   if (title === undefined || title === null) return false;
   if (title.length < 1) return false;
@@ -36,4 +41,26 @@ const verifyTask = (req: Request, res: Response, next: NextFunction) => {
   }
   return next();
 };
-export default verifyTask;
+
+const verifyUpdateTask = (req: Request, res: Response, next: NextFunction) => {
+  const {
+    id, title, content, status,
+  } = req.body;
+
+  if (!checkId(id)) {
+    return res.status(sc.BAD_REQUEST).send({ message: 'Missing Id' });
+  }
+
+  if (!checkTitle(title)) {
+    return res.status(sc.BAD_REQUEST).send({ message: 'Invalid or Missing Title' });
+  }
+  if (!checkContent(content)) {
+    return res.status(sc.BAD_REQUEST).send({ message: 'Invalid or Missing Content' });
+  }
+  if (!checkTaskStatus(status)) {
+    return res.status(sc.BAD_REQUEST).send({ message: 'Invalid or Missing Status' });
+  }
+  return next();
+};
+
+export { verifyTask, verifyUpdateTask };
