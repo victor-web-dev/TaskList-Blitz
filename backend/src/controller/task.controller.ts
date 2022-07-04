@@ -40,4 +40,17 @@ export default class TaskController {
       return res.status(sc.INTERNAL_SERVER_ERROR).end();
     }
   }
+
+  public async deleteTask(req: Request, res: Response) {
+    try {
+      const { id } = req.params;
+      const data = await this.service.deleteTask(parseInt(id, 10));
+      return res.status(sc.OK).json(data);
+    } catch (error) {
+      if (error instanceof Error) {
+        return res.status(sc.BAD_REQUEST).json({ message: error.message });
+      }
+      return res.status(sc.INTERNAL_SERVER_ERROR).end();
+    }
+  }
 }
