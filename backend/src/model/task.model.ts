@@ -54,7 +54,15 @@ export default class TaskModel {
     }
   }
 
-  // async deleteTask() {
-  //   throw new Error('Method not implemented.');
-  // }
+  public async deleteTask(id: number): Promise<ITaskData | undefined> {
+    try {
+      const data = await this.prisma.task.delete({ where: { id } });
+      return data as ITaskData;
+    } catch (error) {
+      if (error instanceof Error) {
+        await this.log.generate(error.message);
+        throw new Error('Invalid id, cannot delete');
+      }
+    }
+  }
 }
