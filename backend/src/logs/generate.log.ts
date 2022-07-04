@@ -11,7 +11,8 @@ export default class Log {
     const log = {
       message: Errormessage,
       time: new Date().toLocaleTimeString(),
+      date: new Date().toLocaleDateString(),
     };
-    await fs.appendFile(this.path, JSON.stringify(log));
+    await fs.appendFile(this.path, JSON.stringify(log, null, 2));
   }
 }

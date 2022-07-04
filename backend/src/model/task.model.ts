@@ -12,7 +12,7 @@ export default class TaskModel {
 
   constructor() {
     this.prisma = new PrismaClient();
-    this.logPath = '../logs/model/taskLog.json';
+    this.logPath = './src/logs/model/taskLog.json';
     this.log = new Log(this.logPath);
   }
 
@@ -49,7 +49,7 @@ export default class TaskModel {
     } catch (error) {
       if (error instanceof Error) {
         await this.log.generate(error.message);
-        throw new Error(error.message);
+        throw new Error('Invalid id, cannot update');
       }
     }
   }

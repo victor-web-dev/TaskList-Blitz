@@ -1,0 +1,13 @@
+{
+  "message": "\nInvalid `this.prisma.task.update()` invocation in\n/Users/victoraraujo/Documents/projects/blitz-carreira-trybe/blitz/backend/src/model/task.model.ts:44:43\n\n  41 \n  42 public async updateTask(task: ITaskData): Promise<ITaskData | undefined > {\n  43   try {\n→ 44     const data = await this.prisma.task.update(\n  An operation failed because it depends on one or more records that were required but not found. Record to update not found.",
+  "time": "01:38:25",
+  "date": "04/07/2022"
+}{
+  "message": "\nInvalid `this.prisma.task.update()` invocation in\n/Users/victoraraujo/Documents/projects/blitz-carreira-trybe/blitz/backend/src/model/task.model.ts:44:43\n\n  41 \n  42 public async updateTask(task: ITaskData): Promise<ITaskData | undefined > {\n  43   try {\n→ 44     const data = await this.prisma.task.update(\n  An operation failed because it depends on one or more records that were required but not found. Record to update not found.",
+  "time": "01:38:47",
+  "date": "04/07/2022"
+}{
+  "message": "\nInvalid `this.prisma.task.update()` invocation in\n/Users/victoraraujo/Documents/projects/blitz-carreira-trybe/blitz/backend/src/model/task.model.ts:44:43\n\n  41 \n  42 public async updateTask(task: ITaskData): Promise<ITaskData | undefined > {\n  43   try {\n→ 44     const data = await this.prisma.task.update(\n  An operation failed because it depends on one or more records that were required but not found. Record to update not found.",
+  "time": "01:39:03",
+  "date": "04/07/2022"
+}
