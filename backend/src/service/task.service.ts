@@ -18,4 +18,9 @@ export default class TaskService {
     if (!data) throw new Error('Not created, something went wrong');
     return data;
   }
+
+  public async updateTask(task: ITaskData) {
+    const data = await this.model.updateTask(task);
+    return data;
+  }
 }
