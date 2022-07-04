@@ -12,7 +12,7 @@ export default class TaskModel {
 
   constructor() {
     this.prisma = new PrismaClient();
-    this.logPath = '../logs/model/taskLog.txt';
+    this.logPath = '../logs/model/taskLog.json';
     this.log = new Log(this.logPath);
   }
 
