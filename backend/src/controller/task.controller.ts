@@ -34,6 +34,9 @@ export default class TaskController {
       const data = await this.service.updateTask(task);
       return res.status(sc.OK).json(data);
     } catch (error) {
+      if (error instanceof Error) {
+        return res.status(sc.BAD_REQUEST).json({ message: error.message });
+      }
       return res.status(sc.INTERNAL_SERVER_ERROR).end();
     }
   }
