@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 import { fetchAllTasks } from './helpers/axios'
+import TaskTile from './TaskTile';
 
 function Home() {
   const [allTasks, setAllTasks] = useState([]);
@@ -13,13 +14,17 @@ function Home() {
 
   return (
     <>
-      <h2>Teste</h2>
       <div className="task-list">
         <ul>
           {
             isTaskLoading ? <span>Loading...</span> : (
-              // allTasks.map((e) => {})
-              console.log(isTaskLoading)
+              allTasks.data.map((e) => {
+                return (<li key={e.id}>
+                  <TaskTile
+                    id={e.id} title={e.title} status={e.status} createdAt={e.createdAt}
+                  />
+                  </li>)
+              })
             )
           }
         </ul>
