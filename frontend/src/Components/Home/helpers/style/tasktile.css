@@ -1,0 +1,17 @@
+.task-tile {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+}
+
+.task-tile-basic-info {
+  display: flex;
+  justify-content: space-between;
+  width: fit-content;
+}
+
+.task-tile-basic-info :nth-child(1),
+.task-tile-basic-info :nth-child(2),
+.task-tile-basic-info :nth-child(3) {
+  padding: 10px;
+}
