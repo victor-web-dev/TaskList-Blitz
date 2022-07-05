@@ -3,7 +3,7 @@ Repo made for Trybe career blitz and has the purpose to evaluate frontend and ba
 
 **This project still in development**
 
-This is a task management application, similar to the very known Trello, but with the purpose is to practice fullstack development skills.
+This is a task management application, similar to the very known Trello, but the purpose is to practice fullstack development skills.
 
 ## How to start :rocket:
 
@@ -64,4 +64,7 @@ Execute the following scripts
 The first command will build the typescript files and execute the migration and seed the DB.
 
 The second one will execute nodemon and start the server.
+
+## Frontend
+...
 
