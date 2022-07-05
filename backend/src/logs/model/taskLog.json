@@ -14,4 +14,12 @@
   "message": "\nInvalid `this.prisma.task.delete()` invocation in\n/Users/victoraraujo/Documents/projects/blitz-carreira-trybe/blitz/backend/src/model/task.model.ts:59:49\n\n   56 \n   57 public async deleteTask(id: number): Promise<ITaskData | undefined> {\n   58   try {\n→  59     const data = await this.prisma.task.delete(\n  An operation failed because it depends on one or more records that were required but not found. Record to delete does not exist.",
   "time": "02:21:11",
   "date": "04/07/2022"
+}{
+  "message": "\nInvalid `this.prisma.task.findMany()` invocation in\n/Users/victoraraujo/Documents/projects/blitz-carreira-trybe/blitz/backend/src/model/task.model.ts:21:43\n\n  18 \n  19 public async getAll(): Promise<ITaskData[] | undefined> {\n  20   try {\n→ 21     const data = await this.prisma.task.findMany()\n  Can't reach database server at `localhost`:`3306`\n\nPlease make sure your database server is running at `localhost`:`3306`.",
+  "time": "21:13:04",
+  "date": "04/07/2022"
+}{
+  "message": "\nInvalid `this.prisma.task.findMany()` invocation in\n/Users/victoraraujo/Documents/projects/blitz-carreira-trybe/blitz/backend/src/model/task.model.ts:21:43\n\n  18 \n  19 public async getAll(): Promise<ITaskData[] | undefined> {\n  20   try {\n→ 21     const data = await this.prisma.task.findMany()\n  Can't reach database server at `localhost`:`3306`\n\nPlease make sure your database server is running at `localhost`:`3306`.",
+  "time": "21:13:19",
+  "date": "04/07/2022"
 }
