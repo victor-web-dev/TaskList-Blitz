@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { fetchAllTasks } from './helpers/axios'
-import TaskTile from './TaskTile';
+import TaskTile from './helpers/TaskTile';
+import './helpers/style/home.css';
 
 function Home() {
   const [allTasks, setAllTasks] = useState([]);
@@ -13,24 +14,25 @@ function Home() {
   }, []);
 
   return (
-    <>
-      <div className="task-list">
-        <ul>
+      <div className='task-view'>
+        <ul className="task-list">
           {
             isTaskLoading ? <span>Loading...</span> : (
               allTasks.data.map((e) => {
                 return (<li key={e.id}>
-                  <TaskTile
-                    id={e.id} title={e.title} status={e.status} createdAt={e.createdAt}
-                  />
+                    <TaskTile
+                      id={e.id}
+                      title={e.title}
+                      content={e.content}
+                      status={e.status}
+                      createdAt={e.createdAt}
+                    />
                   </li>)
               })
             )
           }
         </ul>
       </div>
-      <div className="task"></div>
-    </>
   );
 }
 
