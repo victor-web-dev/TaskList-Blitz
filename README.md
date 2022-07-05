@@ -26,7 +26,7 @@ This is a task management application, similar to the very known Trello, but the
   npm install
   ```
   
-## Backend
+## Backend :pushpin:
   
 **Stacks used**
   <p align="left">
@@ -65,6 +65,6 @@ The first command will build the typescript files and execute the migration and 
 
 The second one will execute nodemon and start the server.
 
-## Frontend
+## Frontend :pushpin:
 ...
 
