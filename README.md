@@ -37,6 +37,11 @@ This is a task management application, similar to the very known Trello, but the
   <img width=8% title="mysql" src="https://img.icons8.com/color/96/000000/mysql-logo.png"/>
   <h3>Express</h3>
 </p>
+
+**Architecture Pattern**:
+
+    MSC - Model, Service, Controller
+
 <hr/>
 
 - Prisma is being used as an ORM;
